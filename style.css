@@ -80,3 +80,8 @@ button {
   height: 18px;
   cursor: pointer;
 }
+
+#task-list li span.completed {
+  text-decoration: line-through;
+  color: #71717a;
+}

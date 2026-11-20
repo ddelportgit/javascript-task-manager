@@ -79,6 +79,10 @@ function renderTasks() {
     });
     span.textContent = task.title;
 
+    if (task.completed) {
+      span.classList.add("completed");
+    }
+
     li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(deleteButton);
