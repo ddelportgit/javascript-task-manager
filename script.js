@@ -59,6 +59,12 @@ function renderTasks() {
     checkbox.type = "checkbox";
     checkbox.checked = task.completed;
 
+    checkbox.addEventListener("change", function () {
+      task.completed = checkbox.checked;
+
+      saveTasks();
+    });
+
     const span = document.createElement("span");
     span.textContent = task.title;
 
