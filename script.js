@@ -32,6 +32,13 @@ taskForm.addEventListener("submit", function (event) {
 function renderTasks() {
   taskList.innerHTML = "";
 
+  if (tasks.length === 0) {
+    const li = document.createElement("li");
+    li.textContent = "No tasks yet. Add your first task!";
+    taskList.appendChild(li);
+    return;
+  }
+
   tasks.forEach(function (task) {
     const li = document.createElement("li");
 
@@ -40,3 +47,5 @@ function renderTasks() {
     taskList.appendChild(li);
   });
 }
+
+renderTasks();
