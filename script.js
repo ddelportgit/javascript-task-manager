@@ -13,3 +13,17 @@ function addTask(title) {
 
   tasks.push(task);
 }
+
+taskForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  const title = taskInput.value.trim();
+
+  if (title === "") {
+    return;
+  }
+
+  addTask(title);
+
+  taskInput.value = "";
+});
