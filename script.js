@@ -55,7 +55,15 @@ function renderTasks() {
   tasks.forEach(function (task) {
     const li = document.createElement("li");
 
-    li.textContent = task.title;
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = task.completed;
+
+    const span = document.createElement("span");
+    span.textContent = task.title;
+
+    li.appendChild(checkbox);
+    li.appendChild(span);
 
     taskList.appendChild(li);
   });
