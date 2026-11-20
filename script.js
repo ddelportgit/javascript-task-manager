@@ -61,6 +61,7 @@ function renderTasks() {
 
     checkbox.addEventListener("change", function () {
       task.completed = checkbox.checked;
+      span.classList.toggle("completed", task.completed);
 
       saveTasks();
     });
