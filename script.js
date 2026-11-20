@@ -14,6 +14,10 @@ function addTask(title) {
   tasks.push(task);
 }
 
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
 taskForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -24,6 +28,7 @@ taskForm.addEventListener("submit", function (event) {
   }
 
   addTask(title);
+  saveTasks();
   renderTasks();
 
   taskInput.value = "";
