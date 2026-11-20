@@ -66,10 +66,22 @@ function renderTasks() {
     });
 
     const span = document.createElement("span");
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    deleteButton.addEventListener("click", function () {
+      tasks = tasks.filter(function (item) {
+        return item.id !== task.id;
+      });
+
+      saveTasks();
+      renderTasks();
+    });
     span.textContent = task.title;
 
     li.appendChild(checkbox);
     li.appendChild(span);
+    li.appendChild(deleteButton);
 
     taskList.appendChild(li);
   });
