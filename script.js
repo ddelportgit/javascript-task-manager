@@ -24,6 +24,19 @@ taskForm.addEventListener("submit", function (event) {
   }
 
   addTask(title);
+  renderTasks();
 
   taskInput.value = "";
 });
+
+function renderTasks() {
+  taskList.innerHTML = "";
+
+  tasks.forEach(function (task) {
+    const li = document.createElement("li");
+
+    li.textContent = task.title;
+
+    taskList.appendChild(li);
+  });
+}
