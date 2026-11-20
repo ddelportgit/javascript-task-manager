@@ -18,6 +18,14 @@ function saveTasks() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+function loadTasks() {
+  const savedTasks = localStorage.getItem("tasks");
+
+  if (saveTasks !== null) {
+    tasks = JSON.parse(savedTasks);
+  }
+}
+
 taskForm.addEventListener("submit", function (event) {
   event.preventDefault();
 
@@ -53,4 +61,5 @@ function renderTasks() {
   });
 }
 
+loadTasks();
 renderTasks();
